@@ -20,9 +20,9 @@ class Particle {
 
     update() {
         this.speedy += this.g
-        if(this.speedx > 0) {
+        if (this.speedx > 0) {
             this.speedx -= 0.2;
-        } else if( this.speedx < 0.2 && this.speedx > -0.2) {
+        } else if (this.speedx < 0.2 && this.speedx > -0.2) {
             this.speedx = 0;
         } else {
             this.speedx += 0.2;
@@ -32,7 +32,7 @@ class Particle {
         this.tick += 1;
         if (this.tick >= 25) {
             this.tick = 0;
-            if(this.size > 1) 
+            if (this.size > 1)
                 this.size -= 1;
         }
     }
@@ -43,7 +43,7 @@ class Particle {
     }
 
     isdead() {
-        if (this.y > height)  {
+        if (this.y > height) {
             return true;
         }
         return false;
@@ -60,7 +60,7 @@ class Particle {
 function getRandomVect(offset, multiplyer) {
     let rad = Math.random() * 2 * Math.PI;
     let length = offset + Math.floor(Math.random() * multiplyer);
-    return {x: Math.cos(rad)*length, y: Math.sin(rad)*length}
+    return { x: Math.cos(rad) * length, y: Math.sin(rad) * length }
 }
 
 class Firework {
@@ -71,32 +71,36 @@ class Firework {
         this.color = getRandomColor();
         this.startx = Math.random() * width;
         this.starty = height;
-        this.dx = Math.floor(this.x - this.startx)/(speed * risetime * 0.66);
-        this.dy = Math.floor(this.y - this.starty)/(speed * risetime * 0.66);
+        this.dx = Math.floor(this.x - this.startx) / (speed * risetime * 0.66);
+        this.dy = Math.floor(this.y - this.starty) / (speed * risetime * 0.66);
+        if (mobileCheck()) {
+            this.dx = Math.floor(this.x - this.startx) / (speed * risetime);
+            this.dy = Math.floor(this.y - this.starty) / (speed * risetime);
+        }
         this.isExploded = false;
-        setTimeout(() => {this.createExplosion()}, risetime * 1000);
+        setTimeout(() => { this.createExplosion() }, risetime * 1000);
     }
 
     draw() {
-        this.particles.forEach(function(p){
+        this.particles.forEach(function (p) {
             p.draw();
         })
-        if(!this.isExploded) {
+        if (!this.isExploded) {
             ctx.beginPath();
-            ctx.arc(this.startx, this.starty, 15, 0, 2*Math.PI);
+            ctx.arc(this.startx, this.starty, 15, 0, 2 * Math.PI);
             ctx.fillStyle = this.color;
             ctx.fill();
         }
     }
 
     update() {
-        if(!this.isExploded) {
+        if (!this.isExploded) {
             this.startx += this.dx;
             this.starty += this.dy;
         } else {
-            for(let i = 0; i < this.particles.length; i++) {
+            for (let i = 0; i < this.particles.length; i++) {
                 this.particles[i].update();
-                if(this.particles[i].isdead()) {
+                if (this.particles[i].isdead()) {
                     this.particles.splice(i, 1);
                 }
             }
@@ -104,16 +108,16 @@ class Firework {
     }
 
     createExplosion() {
-        for(let i = 0; i < numparticles; i++) {
+        for (let i = 0; i < numparticles; i++) {
             let vect = getRandomVect(5, 5);
-            this.particles.push(new Particle(this.x, this.y, Math.random()*5+5, this.color, true));
+            this.particles.push(new Particle(this.x, this.y, Math.random() * 5 + 5, this.color, true));
             this.particles[this.particles.length - 1].applyForce(vect.x, vect.y);
         }
         this.isExploded = true;
     }
 
     isover() {
-        if(this.particles.length == 0 && this.isExploded) {
+        if (this.particles.length == 0 && this.isExploded) {
             return true;
         }
         return false;
@@ -123,14 +127,14 @@ class Firework {
 var fireworks = new Array();
 
 function drawFireworks() {
-    fireworks.forEach(function(f){
+    fireworks.forEach(function (f) {
         f.draw();
     })
 }
 
 function handleNewFireworks() {
-    while(fireworks.length < 4) {
-        if(clicks.length) {
+    while (fireworks.length < 5) {
+        if (clicks.length) {
             let pos = clicks.shift();
             fireworks.push(new Firework(pos.x, pos.y));
         }
@@ -141,9 +145,9 @@ function handleNewFireworks() {
 }
 
 function updateFireworks() {
-    for(let i = 0; i < fireworks.length; i++) {
+    for (let i = 0; i < fireworks.length; i++) {
         this.fireworks[i].update();
-        if(this.fireworks[i].isover()) {
+        if (this.fireworks[i].isover()) {
             this.fireworks.splice(i, 1);
         }
     }
