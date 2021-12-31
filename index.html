@@ -13,7 +13,7 @@
 
 <body>
     <img id="bg-image" class="img-responsive" src="media/city.png">
-    
+
     <canvas id="screen"></canvas>
 
     <div id="pop" class="overlay">
@@ -21,7 +21,7 @@
             <h2>Comming soon!</h2>
             <a class="close" href="#" onclick="closepopup()">&times;</a>
             <div class="content">
-                Mobile view comming soon! Please switch to your Laptop or enable Desktop view to enjoy full expirience! 
+                Mobile view comming soon! Please switch to your Laptop or enable Desktop view to enjoy full expirience!
             </div>
         </div>
     </div>
@@ -43,10 +43,37 @@
             !
         </div>
     </div>
-    
-    
-    <script src="script/sketch.js"></script>
+
+    <script>
+        var width = document.width;
+        var height = document.height;
+        var canvas = document.getElementById("screen");
+        var ctx = canvas.getContext("2d");
+        var bg = document.getElementById("bg-image");
+
+        var nameplaceholder = document.getElementById("nameplaceholder");
+        var roleinfo = document.getElementsByClassName("role-info")[0];
+
+        //roles
+        var bf = "Benni";
+        var eb = "Alex";
+        var cf = ["Constantin", "Karsten"];
+        var f = ["Dominik", "Jan", "Mario", "Nico", "Tim", "Max", "Marie", "Hemma", "Clemens", "Flo", "Verena", "Veronika", "Jakob", "Anna", ""];
+        var t = ["Julia", "Prf. Kuran", "Prf. Tillich", "Prf. Birgman", "Prf. Willinger", "Prf. Peham"];
+        var cm = ["Rafael", "Felix", "Marco", "Daniel", "Fabian", "Melanie", "Luka", "Paul", "Yasin", "Resul", "Mark", "Harun", "Manuel", ""];
+        var z = ["DMZ", "Zauberer"];
+        var fam = ["jakob", "Ruth", "Thomas", "Marlies", "Gerald"];
+
+        // speed adjustments
+        var speed = 100;
+
+        //mouse
+        var mouseX;
+        var mouseY;
+
+    </script>
     <script src="script/fireworks.js"></script>
+    <script src="script/sketch.js"></script>
 
 </body>
 
