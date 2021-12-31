@@ -114,7 +114,6 @@ function reset() {
     nameplaceholder.innerHTML = getParameter("name");
     roleCheck(getParameter("name"));
     if (mobileCheck()) {
-        bg.style.display = "none";
         document.getElementsByClassName("overlay")[0].style.visibility = "visible";
         document.getElementsByClassName("tex-box")[0].style.fontSize = 30;
     }
