@@ -73,9 +73,9 @@ function roleCheck(name) {
     }
 }
 
-function closepopup() {
-    document.getElementsByClassName("overlay")[0].style.display = "none";
-}
+// function closepopup() {
+//     document.getElementsByClassName("overlay")[0].style.display = "none";
+// }
 
 function updateSize() {
     width = window.innerWidth;
