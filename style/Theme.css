@@ -5,7 +5,7 @@
 }
 
 :root {
-  --bg: #2a2a2e;
+  --bg: #1a1a1e;
   --red: #cc231e;
   --lightgreen: #34a65f;
   --darkgreen: #0f8a5f;
@@ -19,7 +19,7 @@ html {
 
 body {
   /* background: radial-gradient(ellipse at bottom, #235e6f 0%, #090a0f 100%); */
-  background-color: var(--skyblue);
+  background-color: var(--bg);
   background-repeat: no-repeat;
   width: 100%;
   height: fit-content;
@@ -168,6 +168,7 @@ body {
   opacity: 1;
   display: block;
 }
+
 .overlay:target {
   visibility: visible;
   opacity: 1;

@@ -18,18 +18,11 @@ var z = ["DMZ", "Zauberer"];
 var fam = ["jakob", "Ruth", "Thomas", "Marlies", "Gerald"];
 
 // speed adjustments
-var speed = 30;
+var speed = 10;
 
 //mouse
 var mouseX;
 var mouseY;
-var mouseDown = 0;
-document.body.onmousedown = function() { 
-  ++mouseDown;
-}
-document.body.onmouseup = function() {
-  --mouseDown;
-}
 
 function getParameter(parameterName) {
     let parameters = new URLSearchParams(window.location.search);
@@ -59,7 +52,7 @@ function getRandomColor() {
       color += letters[Math.floor(Math.random() * 16)];
     }
     return color;
-  }
+}
   
 function roleCheck(name) {
     if(name == bf) {
@@ -118,29 +111,32 @@ function updateSize() {
     if (width != canvas.width || height != canvas.height) {
         canvas.width = width;
         canvas.height = height;
-        groundflakes = new Array();
-        snowflakes = new Array();
-        initSnow();
     }
 
 }
 
 function drawbg() {
     ctx.clearRect(0, 0, width, height);
-    groundflakes.forEach(function (flake) {
-        flake.draw();
-    })
 }
+
+
 
 function update() {
     updateSize();
-    updateSnow();
+    updateFireworks();
+    testParticles();
 }
 
 function draw() {
-    drawbg()
-    drawSnow();
+    drawFireworks();
+    particles.forEach(function(p) {
+        p.draw();
+    })
     requestAnimationFrame(draw);
+}
+
+function onclick(event) {
+    clicks.push({x: mouseX,y: mouseY});
 }
 
 function reset() {
@@ -149,12 +145,11 @@ function reset() {
     roleCheck(getParameter("name"));
     if(mobileCheck()) {
         bg.style.display = "none";
-        document.getElementsByClassName(".tooltip.pressie")[0].style.left = 0;
         document.getElementsByClassName("overlay")[0].style.visibility = "visible";
         document.getElementsByClassName("tex-box")[0].style.fontSize = 30;
     }
     updateSize();
-    initSnow();
+    document.addEventListener("click", onclick);
     document.addEventListener('mousemove', (event) => {
         mouseX = event.clientX;
         mouseY = event.clientY;
@@ -174,8 +169,9 @@ function reset() {
     nameplaceholder.addEventListener("mouseleave", () => {
         roleinfo.style.visibility = "hidden";
     })
-    resetanimations();
 }
+
+var clicks = new Array();
 
 requestAnimationFrame(draw);
 
