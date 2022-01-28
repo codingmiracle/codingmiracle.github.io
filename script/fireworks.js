@@ -134,13 +134,11 @@ function drawFireworks() {
 
 function handleNewFireworks() {
     while (fireworks.length < 5) {
-        if (clicks.length) {
-            let pos = clicks.shift();
-            fireworks.push(new Firework(pos.x, pos.y));
-        }
-        else {
-            fireworks.push(new Firework(Math.random() * width, Math.random() * height));
-        }
+        fireworks.push(new Firework(Math.random() * width, Math.random() * height));
+    }
+    if (clicks.length) {
+        let pos = clicks.shift();
+        fireworks.push(new Firework(pos.x, pos.y));
     }
 }
 
