@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="style/Theme.css">
+
+    <title>My Birthday</title>
+
+</head>
+
+<body>
+    <img id="bg-image" class="img-responsive" src="media/bdCake.png">
+
+    <canvas id="screen"></canvas>
+
+    <!-- <div id="pop" class="overlay">
+        <div class="popup">
+            <h2>Comming soon!</h2>
+            <a class="close" href="#" onclick="closepopup()">&times;</a>
+            <div class="content">
+                Mobile view comming soon! Please switch to your Laptop or enable Desktop view to enjoy full expirience!
+            </div>
+        </div>
+    </div> -->
+
+    <div class="text-container">
+        <div class="text-box">
+            It's my B-day🥳
+            <div id="nameplaceholder"></div>
+            <div class="verified">
+                <img id="v-logo" title="You are great!" src="media/instagram-verified-logo.png" alt="">
+                <div class="role-info">
+                    <div class="role">A normal peep!</div>
+                    <div id="prc">90%</div>
+                    <div class="rarity">
+                        Howdy! Schau dich hier ein wenig um!
+                    </div>
+                </div>
+            </div>
+            !
+        </div>
+    </div>
+
+    <script>
+        var width = document.width;
+        var height = document.height;
+        var canvas = document.getElementById("screen");
+        var ctx = canvas.getContext("2d");
+        var bg = document.getElementById("bg-image");
+
+        var nameplaceholder = document.getElementById("nameplaceholder");
+        var roleinfo = document.getElementsByClassName("role-info")[0];
+
+        //roles
+        var bf = "Benni";
+        var eb = "Alex";
+        var cf = ["Constantin", "Karsten"];
+        var f = ["Dominik", "Jan", "Mario", "Nico", "Tim", "Max", "Marie", "Hemma", "Clemens", "Flo", "Verena", "Veronika", "Jakob", "Anna", ""];
+        var t = ["Julia", "Prf. Kuran", "Prf. Tillich", "Prf. Birgman", "Prf. Willinger", "Prf. Peham"];
+        var cm = ["Rafael", "Felix", "Marco", "Daniel", "Fabian", "Melanie", "Luka", "Paul", "Yasin", "Resul", "Mark", "Harun", "Manuel", ""];
+        var z = ["DMZ", "Zauberer"];
+        var fam = ["jakob", "Ruth", "Thomas", "Marlies", "Gerald"];
+
+        // speed adjustments
+        var speed = 100;
+
+        //mouse
+        var mouseX;
+        var mouseY;
+
+    </script>
+    <script src="script/fireworks.js"></script>
+    <script src="script/sketch.js"></script>
+
+</body>
+
+</html>
