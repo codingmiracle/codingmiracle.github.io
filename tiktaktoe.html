@@ -1,0 +1,41 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Tik Tak Toe</title>
+	<link rel="stylesheet" type="text/css" href="tiktaktoe.css">
+</head>
+
+<body>
+	<div class="borderbox">
+		<div class="settings">
+			<div class="title">Dificulty:</div>
+			<button onclick="setDificulty(this)">Duo</button>
+			<button onclick="setDificulty(this)" class="active">Easy</button>
+			<button onclick="setDificulty(this)">Hard</button>
+			<button onclick="setDificulty(this)">Unbeatable</button>
+		</div>
+		<div class="winning-message" id="winning-message">
+			<div id="data-winning-message-text">X Wins!</div>
+			<button id="restart-button" onclick="startGame()">Restart</button>
+		</div>
+	</div>
+	<div class="board x" id="board">
+		<div class="cell" id="0" data-cell onclick="handleClick(0)"></div>
+		<div class="cell" id="1" data-cell onclick="handleClick(1)"></div>
+		<div class="cell" id="2" data-cell onclick="handleClick(2)"></div>
+		<div class="cell" id="3" data-cell onclick="handleClick(3)"></div>
+		<div class="cell" id="4" data-cell onclick="handleClick(4)"></div>
+		<div class="cell" id="5" data-cell onclick="handleClick(5)"></div>
+		<div class="cell" id="6" data-cell onclick="handleClick(6)"></div>
+		<div class="cell" id="7" data-cell onclick="handleClick(7)"></div>
+		<div class="cell" id="8" data-cell onclick="handleClick(8)"></div>
+	</div>" "
+
+	<script src="tiktaktoe.js"></script>
+</body>
+
+</html>
