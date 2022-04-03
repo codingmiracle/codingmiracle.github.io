@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/solana-counter/static/css/main.e8e013d5.css",
+    "main.js": "/solana-counter/static/js/main.1b4fb2ff.js",
+    "static/js/736.cd8fffb1.chunk.js": "/solana-counter/static/js/736.cd8fffb1.chunk.js",
+    "static/js/551.dd16c59b.chunk.js": "/solana-counter/static/js/551.dd16c59b.chunk.js",
+    "static/js/384.6d2acf26.chunk.js": "/solana-counter/static/js/384.6d2acf26.chunk.js",
+    "static/js/530.07040b9f.chunk.js": "/solana-counter/static/js/530.07040b9f.chunk.js",
+    "static/js/776.fcb0d88a.chunk.js": "/solana-counter/static/js/776.fcb0d88a.chunk.js",
+    "static/js/787.c1112931.chunk.js": "/solana-counter/static/js/787.c1112931.chunk.js",
+    "static/js/294.535a213e.chunk.js": "/solana-counter/static/js/294.535a213e.chunk.js",
+    "index.html": "/solana-counter/index.html",
+    "main.e8e013d5.css.map": "/solana-counter/static/css/main.e8e013d5.css.map",
+    "main.1b4fb2ff.js.map": "/solana-counter/static/js/main.1b4fb2ff.js.map",
+    "736.cd8fffb1.chunk.js.map": "/solana-counter/static/js/736.cd8fffb1.chunk.js.map",
+    "551.dd16c59b.chunk.js.map": "/solana-counter/static/js/551.dd16c59b.chunk.js.map",
+    "384.6d2acf26.chunk.js.map": "/solana-counter/static/js/384.6d2acf26.chunk.js.map",
+    "530.07040b9f.chunk.js.map": "/solana-counter/static/js/530.07040b9f.chunk.js.map",
+    "787.c1112931.chunk.js.map": "/solana-counter/static/js/787.c1112931.chunk.js.map",
+    "294.535a213e.chunk.js.map": "/solana-counter/static/js/294.535a213e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e8e013d5.css",
+    "static/js/main.1b4fb2ff.js"
+  ]
+}
